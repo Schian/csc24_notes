@@ -58,7 +58,6 @@
 
 ### `FLAG{ctf-412390adsajklzc9ssk}`
 
-
 ```python
 from flask import Flask, request
 
@@ -73,3 +72,8 @@ def receive_data():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
 ```
+
+## Flagpypi
+
+- Created a python virtual environment with `python3 -m venv ./.venv`
+- Installed the package with `pip install flagpypi`
