@@ -110,3 +110,7 @@ def flag():
     - `100%smart        (flag.zip/flag.txt)`
 
 ### `FLAG{4CC3PT3D_TH3_R1SK_TH1S_T1M3}`
+
+## Traffic light protcol
+
+- step-by-step
