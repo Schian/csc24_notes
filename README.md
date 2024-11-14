@@ -77,3 +77,20 @@ if __name__ == "__main__":
 
 - Created a python virtual environment with `python3 -m venv ./.venv`
 - Installed the package with `pip install flagpypi`
+- `main.py` contains the below
+
+```text
+def flag():
+    return "fake flag"
+```
+
+- Use the PyPI API to get a `.json` of all the release metadata.
+  - `curl -s https://pypi.org/pypi/flagpypi/json | jq . | flagpypi.json`
+- Use some bash commands to find the largest file size
+  - `cat flagpypi.json | grep "size" | cut -d':' -f2 | sort -nr | head`
+  - `cat flagpypi.json | grep -A5 -B5 '"size": 1565'`
+- The largest filesize is the release: 2.2.11 and the `.whl` file
+  - Download and unzip this file
+  - `cat main.py`
+
+### `flag{1_h0p3_y0u_foUnD_1t_1n_4n_3ff1c13nt_w4y}`
