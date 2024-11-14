@@ -94,3 +94,19 @@ def flag():
   - `cat main.py`
 
 ### `flag{1_h0p3_y0u_foUnD_1t_1n_4n_3ff1c13nt_w4y}`
+
+## Host Unknown presents: Accepted the Risk
+
+- nmap scan
+  - open SMB ports
+- enum4linux
+  - can connect anonumously
+- enumerate all shares
+  - `get flag.zip`
+  - password protected
+- crack password
+  - `zip2john flag.zip > flag.hash`
+  - `john --wordlist=/usr/share/wordlists/rockyou.txt flag.hash`
+    - `100%smart        (flag.zip/flag.txt)`
+
+### `FLAG{4CC3PT3D_TH3_R1SK_TH1S_T1M3}`
