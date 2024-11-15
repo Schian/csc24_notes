@@ -36,10 +36,19 @@ soup = BeautifulSoup(html_content, 'html.parser')
 
 # Extract the traffic data
 traffic_data = {
-    "carsBusesNorthSouth": int(soup.find(string="Cars and buses, north and south side: ").find_next('b').text),
-    "carsBusesEastWest": int(soup.find(string="Cars and buses, east and west side: ").find_next("b").text),
-    "trains": int(soup.find(string="Trains: ").find_next("b").text),
-    "pedestriansNorthSouth": int(soup.find(string="Pedestrians, north and south side: ").find_next("b").text),
-    "pedestriansEastWest": int(soup.find(string="Pedestrians, east and west side: ").find_next("b").text)
+    "carsBusesNorthSouth": int(soup.find(
+        string="Cars and buses, north and south side: ").find_next('b').text),
+    "carsBusesEastWest": int(soup.find(
+        string="Cars and buses, east and west side: ").find_next("b").text),
+    "trains": int(soup.find(
+        string="Trains: ").find_next("b").text),
+    "pedestriansNorthSouth": int(soup.find(
+        string="Pedestrians, north and south side: ").find_next("b").text),
+    "pedestriansEastWest": int(soup.find(
+        string="Pedestrians, east and west side: ").find_next("b").text)
 }
+##############################################################################
+# Determine the next green
+next_green = max(traffic_data, key=traffic_data.get)
 
+print(next_green)
