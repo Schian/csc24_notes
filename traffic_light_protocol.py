@@ -51,4 +51,20 @@ traffic_data = {
 # Determine the next green
 next_green = max(traffic_data, key=traffic_data.get)
 
-print(next_green)
+##############################################################################
+# Send the POST request
+
+# Craft the POST request
+post_url = f"{url}/{next_green}"
+
+# Send the POST request
+post_response = requests.post(post_url)
+
+# Review the POST response
+if post_response.status_code == 200:
+    print(f"Successfully changed green light to {next_green}.\n"
+          f"\tResponse from the server: {post_response.text}\n")
+else:
+    print(f"Failed to change the green light.\n"
+          f"\tStatus code: {post_response.status_code}"
+          f"\tServer Response: {post_response.text}")
