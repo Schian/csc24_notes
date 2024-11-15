@@ -113,4 +113,15 @@ def flag():
 
 ## Traffic light protcol
 
-- step-by-step
+- Created a python virtual environment
+  - `pip install beautifulsoup4`
+  - `pip install requests`
+- Fetch HTML contents
+- Parse HTML contents
+  - Used a dictionary `lights:waiting`
+- Determined the next green light
+  - `max(traffic_data, key=traffic_data.get)`
+- Craft and send the POST request
+- Review the POST response
+
+### `flag{8f9asdjk2jd9afjlz}`
