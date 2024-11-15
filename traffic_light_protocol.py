@@ -30,5 +30,16 @@ if url_response.status_code != 200:
 
 html_content = url_response.text
 
-print(html_content)
+##############################################################################
+# Parse the HTML contents
+soup = BeautifulSoup(html_content, 'html.parser')
+
+# Extract the traffic data
+traffic_data = {
+    "carsBusesNorthSouth": int(soup.find(string="Cars and buses, north and south side: ").find_next('b').text),
+    "carsBusesEastWest": int(soup.find(string="Cars and buses, east and west side: ").find_next("b").text),
+    "trains": int(soup.find(string="Trains: ").find_next("b").text),
+    "pedestriansNorthSouth": int(soup.find(string="Pedestrians, north and south side: ").find_next("b").text),
+    "pedestriansEastWest": int(soup.find(string="Pedestrians, east and west side: ").find_next("b").text)
+}
 
